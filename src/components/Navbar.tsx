@@ -1,3 +1,7 @@
+import { NavLink } from "react-router-dom"
+
+
+
 
 
 export const Navbar = () => {
@@ -20,13 +24,34 @@ export const Navbar = () => {
                     <a className="btn btn-ghost text-xl">Hotel Jadi</a>
                 </div>
 
+                <div className="navbar-center hidden lg:flex">
+                    <ul className="flex items-center px-1">
+                        <li className="">
+                            <NavLink to={`/`} className={({ isActive, isPending }) => {
+                                return `px-3 py-1 rounded-full ${isPending ? "bg-primary" : isActive ? "bg-primary" : ""}`
+                            }}>Inicio
+                            </NavLink>
+                        </li>
+                        <li className="">
+                            <NavLink to={`/bedrooms`} className={({ isActive, isPending }) => {
+                                return `px-3 py-1 rounded-full ${isPending ? "bg-primary" : isActive ? "bg-primary" : ""}`
+                            }}>Habitaciones</NavLink></li>
+                        <li className="">
+                            <NavLink to={`/location`} className={({ isActive, isPending }) => {
+                                return `px-3 py-1 rounded-full ${isPending ? "bg-primary" : isActive ? "bg-primary" : ""}`
+                            }}>¿Dónde estamos?</NavLink></li>
+
+                    </ul>
+                </div>
+
                 {/* desktop */}
                 <div className="navbar-end hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
-                        <li className="hover:bg-primary hover:rounded-full transition-colors duration-300 ease-in rounded-full font-extrabold"><a>Home</a></li>
-                        <li className="hover:bg-primary hover:rounded-full transition-colors duration-300 ease-in rounded-full font-extrabold"><a>Más Información</a></li>
-                        <li className="hover:bg-primary hover:rounded-full transition-colors duration-300 ease-in rounded-full font-extrabold"><a>Contactanos</a></li>
-                    </ul>
+
+
+                    <div className="lg:flex lg:items-center lg:gap-2">
+                        <button className="btn btn-primary btn-sm px-4 rounded-full">Registrarse</button>
+                        <button className="btn btn-secondary btn-sm px-4 rounded-full">Iniciar Sesión</button>
+                    </div>
                 </div>
             </div>
         </>

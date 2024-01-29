@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom"
 import { convertToCurrency } from "../helpers"
 
 interface Props {
@@ -6,7 +7,7 @@ interface Props {
 export const CardBedroom = ({ titleTypeBedroom }: Props) => {
     return (
         <>
-            <div className="card text-black-custom bg-white-custom">
+            <div className="card text-black-custom bg-white-custom animate-fade ">
                 <figure><img src="/public/images/bedroom_estandar.webp" alt="Shoes" /></figure>
                 <div className="card-body">
                     <header className="flex items-center justify-between">
@@ -17,9 +18,13 @@ export const CardBedroom = ({ titleTypeBedroom }: Props) => {
                     </header>
 
                     <div className="flex items-center justify-end">
-                        <button className="btn btn-primary rounded-full text-white-custom font-extrabold font-code_pro" >
+                        <NavLink
+                            to={`/bedroom-info`}
+                            className="btn btn-primary rounded-full text-white-custom font-extrabold font-code_pro"
+
+                        >
                             Más Detalles
-                        </button>
+                        </NavLink>
                     </div>
                 </div>
 

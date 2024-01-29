@@ -1,11 +1,28 @@
 import { createBrowserRouter } from "react-router-dom";
 import { BedRoomInfoPage, BedroomsPage, ContactPage, HomePage, LoginPage, ReserveRoomPage } from "../pages";
+import { BedroomsView, HomeView, LocationView } from "../views";
 
 
 export const router = createBrowserRouter([
     {
         path: `/`,
-        element: <HomePage />
+        element: <HomePage />,
+        children: [
+            {
+                index: true,
+                element: <HomeView />
+            },
+            {
+                path: '/bedrooms',
+                element: <BedroomsView />
+
+            },
+            {
+                path: '/location',
+                element: <LocationView />
+
+            }
+        ]
     },
     {
         path: `auth/login`,
