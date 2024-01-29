@@ -1,10 +1,10 @@
 
-interface Props {
+
+export const convertToCurrency = ({ amount, locales, currencyCode }: {
     amount: number,
     locales: Intl.LocalesArgument
     currencyCode: string
-}
-export const convertToCurrency = ({ amount, locales, currencyCode }: Props) => {
+}) => {
     try {
         // Convertir el número a formato de la moneda especificada
         const amountInCurrency = amount.toLocaleString(locales, {
@@ -14,6 +14,6 @@ export const convertToCurrency = ({ amount, locales, currencyCode }: Props) => {
 
         return amountInCurrency;
     } catch (error) {
-        throw new Error(``)
+        throw new Error(`error`)
     }
 }

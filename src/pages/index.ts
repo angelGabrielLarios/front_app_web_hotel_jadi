@@ -1,9 +1,7 @@
-export * from './HomePage.tsx'
-export * from './LoginPage.tsx'
-export * from './RegisterPage.tsx'
-export * from './RecoveryPassPage.tsx'
-export * from './RestorePassPage.tsx'
-export * from './ProductInfoPage.tsx'
-export * from './CartPage.tsx'
-export * from './ErrorInvalidTokenPage.tsx'
-export * from './TableSectionsVisitedPage.tsx'
+
+export * from './LoginPage.tsx';
+export * from './ReserveRoomPage.tsx'
+export * from './HomePage.tsx';
+export * from './ContactPage.tsx';
+export * from './BedroomsPage.tsx'
+export * from './BedRoomInfoPage.tsx'

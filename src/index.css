@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    background-color: #fcfcfc;
+}
+
+@font-face {
+    font-family: 'Agrandir_WideBlack_Italic';
+    src: url('/public/fonts/Agrandir-WideBlackItalic.otf');
+}
+
+@font-face {
+    font-family: 'Code_Pro';
+    font-weight: 700;
+    src: url('/public/fonts/code_pro_bold.otf');
+}
+
+@font-face {
+    font-family: 'Opens_Sans_Bold';
+    src: url('/public/fonts/Open_Sans_Bold.ttf');
+}
+
+.cosa {
+    height: calc(100vh - 48px);
+}
+
+/* .btn {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+} */
+
+/* .card-body {
+    @apply p-4
+} */

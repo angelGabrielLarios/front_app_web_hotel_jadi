@@ -1,2 +1,3 @@
 export * from './convertToCurrency.ts'
-export * from './formatDate.ts'
+export * from './formatDateNow.ts'
+export * from './diffDateDays.ts'

@@ -1,13 +1,20 @@
 
 import { Link } from "react-router-dom"
-import { ModalAlert } from "../components"
+import { useMobileResolution } from "../hooks/global"
 import { useLoginPage } from "../hooks/pages"
-import { useMobileResolution } from "../hooks"
+import { IconErrorInput } from "../components"
+
 
 export const LoginPage = () => {
 
-    const { errors, handleSubmit, isLoading, isShowPassword, messageModalRef, onSubmit, register, setIsShowPassword, typeModalRef, modalAlertRef } = useLoginPage()
-
+    const { register,
+        handleSubmit,
+        onSubmit,
+        isShowPassword,
+        setIsShowPassword,
+        isLoading,
+        errors,
+    } = useLoginPage()
 
     const { isMobile } = useMobileResolution()
 
@@ -38,7 +45,9 @@ export const LoginPage = () => {
                                     value: true,
                                     message: 'Este campo es obligatorio'
                                 }
-                            })} />
+                            })}
+
+                        />
 
                         {
                             errors?.email?.type === 'required'
@@ -46,24 +55,28 @@ export const LoginPage = () => {
                                 <p
                                     className="text-error text-xs flex items-center gap-2 justify-end"
                                 >
-                                    {errors?.email?.message} <svg className="stroke-error" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 16H12.01M12 8V12M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> </g></svg>
+                                    {errors?.email?.message} <IconErrorInput width={24} height={24} />
                                 </p>
                                 : null
                         }
+
+
 
                         <input
                             disabled={isLoading}
                             type={isShowPassword ? 'text' : 'password'}
                             placeholder="Contraseña"
                             className={
-                                `input input-bordered ${isMobile ? 'input-sm' : ''} w-full bg-inherit text-xs lg:text-sm placeholder:text-xs placeholder:lg:text-sm ${errors?.password ? 'input-error' : ''}`
+                                `input input-bordered ${isMobile ? 'input-sm' : ''} w-full bg-inherit text-xs lg:text-sm placeholder:text-xs placeholder:lg:text-sm ${errors?.password?.message ? 'input-error' : ''}`
                             }
                             {...register('password', {
                                 required: {
                                     value: true,
                                     message: 'Este campo es obligatorio'
                                 }
-                            })} />
+                            })}
+
+                        />
 
                         {
                             errors?.password?.type === 'required'
@@ -88,7 +101,7 @@ export const LoginPage = () => {
 
 
                         <button
-                            disabled={isLoading}
+                            /* disabled={isLoading} */
                             type="submit"
                             className={`btn ${isMobile ? 'btn-sm' : ''} btn-primary w-full `}
                         >
@@ -123,11 +136,7 @@ export const LoginPage = () => {
                     </div>
                 </form>
 
-                <ModalAlert
-                    modalRef={modalAlertRef}
-                    message={messageModalRef}
-                    type={typeModalRef}
-                />
+
             </main>
         </>
     )
