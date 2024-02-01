@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { BedRoomInfoPage, BedroomsPage, ContactPage, HomePage, LoginPage, ReserveRoomPage } from "../pages";
+import { BedRoomInfoPage, BedroomsPage, HomePage, LoginPage, ReserveRoomPage } from "../pages";
 import { BedroomsView, HomeView, LocationView } from "../views";
 
 
@@ -28,10 +28,7 @@ export const router = createBrowserRouter([
         path: `auth/login`,
         element: <LoginPage />
     },
-    {
-        path: `contact`,
-        element: <ContactPage />
-    },
+
     {
         path: `reserve`,
         element: <ReserveRoomPage />
@@ -46,5 +43,6 @@ export const router = createBrowserRouter([
         path: `bedroom-info`,
         element: <BedRoomInfoPage />
     },
+
 
 ])

@@ -15,11 +15,32 @@ export const Navbar = () => {
                         </div>
 
                         {/* mobile */}
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-accent rounded-box w-52">
-                            <li className="hover:bg-primary active:bg-primary font-extrabold focus:bg-primary"><a>Home</a></li>
-                            <li><a>Más Información</a></li>
-                            <li><a>Contactanos</a></li>
+                        <ul tabIndex={0} className=" dropdown-content mt-3 z-[1] p-2 shadow bg-accent rounded-box w-52">
+                            <li >
+                                <NavLink to={`/`} className={({ isActive, isPending }) => {
+                                    return `px-3 py-1 rounded-full text-xs transition-colors ease-in duration-300 ${isPending ? "bg-primary" : isActive ? "bg-primary" : ""}`
+                                }}>Inicio
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to={`/bedrooms`} className={({ isActive, isPending }) => {
+                                    return `px-3 py-1 rounded-full text-xs transition-colors ease-in duration-300  ${isPending ? "bg-primary" : isActive ? "bg-primary" : ""}`
+                                }}>Habitaciones</NavLink>
+
+                            </li>
+                            <li>
+                                <NavLink to={`/location`} className={({ isActive, isPending }) => {
+                                    return `px-3 py-1 rounded-full text-xs transition-colors ease-in duration-300 ${isPending ? "bg-primary" : isActive ? "bg-primary" : ""}`
+                                }}>¿Dónde estamos?</NavLink>
+
+                            </li>
+                            <div className="pt-4 space-y-2">
+                                <button className="btn btn-primary btn-sm px-4 rounded-full text-xs w-full">Registrarse</button>
+                                <button className="btn btn-secondary btn-sm px-4 rounded-full text-xs w-full">Iniciar Sesión</button>
+                            </div>
                         </ul>
+
+
                     </div>
                     <a className="btn btn-ghost text-xl">Hotel Jadi</a>
                 </div>
@@ -28,18 +49,20 @@ export const Navbar = () => {
                     <ul className="flex items-center px-1">
                         <li className="">
                             <NavLink to={`/`} className={({ isActive, isPending }) => {
-                                return `px-3 py-1 rounded-full ${isPending ? "bg-primary" : isActive ? "bg-primary" : ""}`
+                                return `px-3 py-1 rounded-full text-sm transition-colors ease-in duration-300 ${isPending ? "bg-primary" : isActive ? "bg-primary" : ""}`
                             }}>Inicio
                             </NavLink>
                         </li>
                         <li className="">
                             <NavLink to={`/bedrooms`} className={({ isActive, isPending }) => {
-                                return `px-3 py-1 rounded-full ${isPending ? "bg-primary" : isActive ? "bg-primary" : ""}`
-                            }}>Habitaciones</NavLink></li>
+                                return `px-3 py-1 rounded-full text-sm transition-colors ease-in duration-300  ${isPending ? "bg-primary" : isActive ? "bg-primary" : ""}`
+                            }}>Habitaciones</NavLink>
+                        </li>
                         <li className="">
                             <NavLink to={`/location`} className={({ isActive, isPending }) => {
-                                return `px-3 py-1 rounded-full ${isPending ? "bg-primary" : isActive ? "bg-primary" : ""}`
-                            }}>¿Dónde estamos?</NavLink></li>
+                                return `px-3 py-1 rounded-full text-sm transition-colors ease-in duration-300 ${isPending ? "bg-primary" : isActive ? "bg-primary" : ""}`
+                            }}>¿Dónde estamos?</NavLink>
+                        </li>
 
                     </ul>
                 </div>

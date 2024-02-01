@@ -8,7 +8,7 @@ export const CardBedroom = ({ titleTypeBedroom }: Props) => {
     return (
         <>
             <div className="card text-black-custom bg-white-custom animate-fade ">
-                <figure><img src="/public/images/bedroom_estandar.webp" alt="Shoes" /></figure>
+                <figure><img src="/images/bedroom_estandar.webp" alt="Shoes" /></figure>
                 <div className="card-body">
                     <header className="flex items-center justify-between">
                         <h2 className="card-title font-extrabold font-opens_sans_bold lg:text-xl">{titleTypeBedroom}</h2>

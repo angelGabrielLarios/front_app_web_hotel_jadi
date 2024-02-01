@@ -5,7 +5,9 @@ export const Footer = () => {
         <>
             <footer className="bg-white-custom">
 
-                <img src="/images/wave_3.svg" alt="" className="block w-full " />
+                <p className="text-black-custom">
+                    Hotel Jadi &copy; Todos los derechos reservados {new Date().getFullYear()}
+                </p>
             </footer>
         </>
     )

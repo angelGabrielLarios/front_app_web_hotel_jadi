@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom"
-import { Navbar } from "../components"
+import { Footer, Navbar } from "../components"
 import { useHomePage } from "../hooks"
 
 
@@ -14,6 +14,8 @@ export const HomePage = () => {
             <Outlet />
 
 
+
+            <Footer />
 
         </>
     )
