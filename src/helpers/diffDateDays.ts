@@ -2,6 +2,8 @@
 
 export function diffDateDays({ initialDate, endDate }: { initialDate: string, endDate: string }): number {
 
+    console.log({ initialDate, endDate })
+
     const objInitialDate = new Date(`${initialDate}T00:00:00Z`)
 
     console.log(objInitialDate)

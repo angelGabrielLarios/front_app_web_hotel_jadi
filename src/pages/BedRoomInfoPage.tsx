@@ -1,6 +1,7 @@
 
 import { IconStar, IconBedFilled, IconBathFilled, IconWifi } from '@tabler/icons-react';
 import { convertToCurrency } from '../helpers';
+import { NavLink } from 'react-router-dom';
 
 
 export const BedRoomInfoPage = () => {
@@ -54,9 +55,9 @@ export const BedRoomInfoPage = () => {
                                 precio por 1 noche es <span className='font-code_pro text-primary text-2xl'>{convertToCurrency({ amount: 320, locales: 'en', currencyCode: 'MXN' })}</span>
                             </p>
 
-                            <button className='btn btn-secondary'>
+                            <NavLink to={'/reserve'} className='btn btn-secondary'>
                                 reservar
-                            </button>
+                            </NavLink>
                         </article>
                     </article>
                 </section>

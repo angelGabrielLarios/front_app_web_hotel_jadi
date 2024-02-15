@@ -12,11 +12,12 @@ export const formatDateNow = ({ date, format }: { date: Date, format: FormatsDat
     if (format === `yyyy-mm-dd`) {
 
         const numDate = date.getDate()
+        const numDateValid = ((numDate >= 1) && (numDate <= 9)) ? `0${numDate}` : `month`
         const month = date.getMonth() + 1
         const year = date.getFullYear()
         const monthValid = ((month >= 1) && (month <= 9)) ? `0${month}` : `month`
 
-        return `${year}-${monthValid}-${numDate}`
+        return `${year}-${monthValid}-${numDateValid}`
     }
 
     else {

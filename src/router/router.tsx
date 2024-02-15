@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { BedRoomInfoPage, BedroomsPage, HomePage, LoginPage, ReserveRoomPage } from "../pages";
+import { BedRoomInfoPage, BedroomsPage, HomePage, LoginPage, RegisterPage, ReserveRoomPage } from "../pages";
 import { BedroomsView, HomeView, LocationView } from "../views";
 
 
@@ -25,8 +25,12 @@ export const router = createBrowserRouter([
         ]
     },
     {
-        path: `auth/login`,
+        path: `/auth/login`,
         element: <LoginPage />
+    },
+    {
+        path: `/auth/register`,
+        element: <RegisterPage />
     },
 
     {

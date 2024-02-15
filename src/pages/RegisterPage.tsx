@@ -1,11 +1,11 @@
 
 import { Link } from "react-router-dom"
 import { useMobileResolution } from "../hooks/global"
-import { useLoginPage } from "../hooks/pages"
+import { useRegisterPage } from "../hooks/pages"
 import { IconErrorInput } from "../components"
 
 
-export const LoginPage = () => {
+export const RegisterPage = () => {
 
     const { register,
         handleSubmit,
@@ -14,7 +14,7 @@ export const LoginPage = () => {
         setIsShowPassword,
         isLoading,
         errors,
-    } = useLoginPage()
+    } = useRegisterPage()
 
     const { isMobile } = useMobileResolution()
 
@@ -29,10 +29,93 @@ export const LoginPage = () => {
                     <h1
                         className="text-primary font-bold text-xl sm:text-2xl md:3xl lg:text-4xl mb-6 text-center font-header"
                     >
-                        Iniciar sesion
+                        Crear una cuenta
                     </h1>
 
                     <div className="space-y-4">
+                        <input
+                            disabled={isLoading}
+                            type="text"
+                            placeholder="Nombre(s)"
+                            className={
+                                `input input-bordered ${isMobile ? 'input-sm' : ''} w-full bg-inherit text-xs lg:text-sm placeholder:text-xs placeholder:lg:text-sm ${errors?.firstName ? 'input-error' : ''}`
+                            }
+                            {...register('firstName', {
+                                required: {
+                                    value: true,
+                                    message: 'Este campo es obligatorio'
+                                }
+                            })}
+
+                        />
+
+                        {
+                            errors?.firstName?.type === 'required'
+                                ?
+                                <p
+                                    className="text-error text-xs flex items-center gap-2 justify-end"
+                                >
+                                    {errors?.firstName?.message} <IconErrorInput width={24} height={24} />
+                                </p>
+                                : null
+                        }
+
+                        <input
+                            disabled={isLoading}
+                            type="text"
+                            placeholder="Apellido(s)"
+                            className={
+                                `input input-bordered ${isMobile ? 'input-sm' : ''} w-full bg-inherit text-xs lg:text-sm placeholder:text-xs placeholder:lg:text-sm ${errors?.lastName ? 'input-error' : ''}`
+                            }
+                            {...register('lastName', {
+                                required: {
+                                    value: true,
+                                    message: 'Este campo es obligatorio'
+                                }
+                            })}
+
+                        />
+
+                        {
+                            errors?.lastName?.type === 'required'
+                                ?
+                                <p
+                                    className="text-error text-xs flex items-center gap-2 justify-end"
+                                >
+                                    {errors?.lastName?.message} <IconErrorInput width={24} height={24} />
+                                </p>
+                                : null
+                        }
+
+                        <input
+                            disabled={isLoading}
+                            type="text"
+                            placeholder="Dirección"
+                            className={
+                                `input input-bordered ${isMobile ? 'input-sm' : ''} w-full bg-inherit text-xs lg:text-sm placeholder:text-xs placeholder:lg:text-sm ${errors?.address ? 'input-error' : ''}`
+                            }
+                            {...register('address', {
+                                required: {
+                                    value: true,
+                                    message: 'Este campo es obligatorio'
+                                }
+                            })}
+
+                        />
+
+                        {
+                            errors?.address?.type === 'required'
+                                ?
+                                <p
+                                    className="text-error text-xs flex items-center gap-2 justify-end"
+                                >
+                                    {errors?.address?.message} <IconErrorInput width={24} height={24} />
+                                </p>
+                                : null
+                        }
+
+
+
                         <input
                             disabled={isLoading}
                             type="email"

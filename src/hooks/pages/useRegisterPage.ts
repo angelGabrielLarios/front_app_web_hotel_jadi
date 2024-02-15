@@ -4,10 +4,13 @@ import { SubmitHandler, useForm } from "react-hook-form"
 
 
 interface IFormInputs {
+    firstName: string
+    lastName: string
+    address: string
     email: string
     password: string
 }
-export const useLoginPage = () => {
+export const useRegisterPage = () => {
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { register, reset, handleSubmit, formState: { errors } } = useForm<IFormInputs>()

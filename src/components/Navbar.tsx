@@ -35,8 +35,12 @@ export const Navbar = () => {
 
                             </li>
                             <div className="pt-4 space-y-2">
-                                <button className="btn btn-primary btn-sm px-4 rounded-full text-xs w-full">Registrarse</button>
-                                <button className="btn btn-secondary btn-sm px-4 rounded-full text-xs w-full">Iniciar Sesión</button>
+                                <NavLink to={`/auth/register`} className="btn btn-primary btn-sm px-4 rounded-full text-xs w-full">
+                                    Registrarse
+                                </NavLink>
+                                <NavLink to={`/auth/login`} className="btn btn-secondary btn-sm px-4 rounded-full text-xs w-full">
+                                    Iniciar Sesión
+                                </NavLink>
                             </div>
                         </ul>
 
@@ -72,8 +76,8 @@ export const Navbar = () => {
 
 
                     <div className="lg:flex lg:items-center lg:gap-2">
-                        <button className="btn btn-primary btn-sm px-4 rounded-full">Registrarse</button>
-                        <button className="btn btn-secondary btn-sm px-4 rounded-full">Iniciar Sesión</button>
+                        <NavLink to={`/auth/register`} className="btn btn-primary btn-sm px-4 rounded-full">Registrarse</NavLink>
+                        <NavLink to={`/auth/login`} className="btn btn-secondary btn-sm px-4 rounded-full">Iniciar Sesión</NavLink>
                     </div>
                 </div>
             </div>

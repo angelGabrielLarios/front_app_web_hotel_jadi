@@ -22,7 +22,7 @@ export const ReserveRoomPage = () => {
 
     const [priceTotal, setPriceTotal] = useState(0)
     useEffect(() => {
-        console.log(watch('check_in_date'), watch('check_out_date'))
+
 
         const days = diffDateDays({ endDate: watch(`check_out_date`), initialDate: watch(`check_in_date`) })
         console.log(days)
@@ -39,9 +39,9 @@ export const ReserveRoomPage = () => {
 
     return (
         <>
-            <main className="min-h-screen flex flex-col items-center justify-start md:justify-center bg-gradient-to-r from-base-200 to-primary">
+            <main className="min-h-screen flex flex-col items-center justify-start md:justify-center bg-white-custom">
                 <form
-                    className="mt-10 md:mt-0 p-6 shadow-lg shadow-base-200 rounded-md bg-base-200 w-11/12 md:w-8/12 lg:w-[40rem]"
+                    className="mt-10 md:mt-0 p-6 shadow-lg border border-primary rounded-md text-black-custom w-11/12 md:w-8/12 lg:w-[40rem] "
                     onSubmit={handleSubmit(onSubmit)}
                     autoComplete="off"
                 >
@@ -60,7 +60,7 @@ export const ReserveRoomPage = () => {
 
                             <label className="form-control w-full ">
                                 <div className="label">
-                                    <span className="label-text">Fecha de entrada</span>
+                                    <span className="label-text text-black-custom">Fecha de entrada</span>
 
 
 
@@ -103,7 +103,7 @@ export const ReserveRoomPage = () => {
 
                             <label className="form-control w-full">
                                 <div className="label">
-                                    <span className="label-text">Fecha de salida</span>
+                                    <span className="label-text text-black-custom">Fecha de salida</span>
                                 </div>
 
                                 <input
